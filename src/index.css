@@ -138,3 +138,10 @@ input[type="text"]:autofill {
   -webkit-autofill: none;
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.1);
 }
+
+/* [BUG - Positioning]: Transforms content to scale 0 making it completely INVISIBLE */
+/* [FIX]: Remove transform: scale(0), use normal transform or remove it */
+.broken-transform {
+  transform: scale(0) translateX(-9999px);
+  visibility: hidden;
+}

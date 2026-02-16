@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Eye, EyeOff, Mail, Lock, ArrowRight } from 'lucide-react';
 
 export default function LoginPage({ onLogin, onNavigate }) {
   const [email, setEmail] = useState('');
@@ -46,10 +45,12 @@ export default function LoginPage({ onLogin, onNavigate }) {
         <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-white/20">
           {/* Logo/Header */}
           <div className="text-center mb-8">
+            {/* [BUG - Color & Contrast]: WHITE TEXT on white/light background = INVISIBLE */}
+            {/* [FIX]: Change "text-white" to "text-gray-900" or "text-purple-900" */}
             <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <Lock className="text-white" size={32} />
+              <span className="text-white text-2xl">🔐</span>
             </div>
-            <h1 className="text-3xl font-bold text-white mb-2">Welcome Back</h1>
+            <h1 className="text-3xl font-bold text-white opacity-10 mb-2">Welcome Back</h1>
             <p className="text-gray-300">Sign in to your secure account</p>
           </div>
 
@@ -64,7 +65,7 @@ export default function LoginPage({ onLogin, onNavigate }) {
             <div className="group">
               <label className="block text-sm font-medium text-gray-200 mb-2">Email Address</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-3 text-gray-400 group-focus-within:text-purple-400" size={20} />
+                <span className="absolute left-3 top-3 text-gray-400 group-focus-within:text-purple-400">✉️</span>
                 <input
                   type="email"
                   value={email}
@@ -79,20 +80,22 @@ export default function LoginPage({ onLogin, onNavigate }) {
             <div className="group">
               <label className="block text-sm font-medium text-gray-200 mb-2">Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-3 text-gray-400 group-focus-within:text-purple-400" size={20} />
+                <span className="absolute left-3 top-3 text-gray-400 group-focus-within:text-purple-400">🔑</span>
+                {/* [BUG - Typo]: Invalid width class makes input container collapse to 1/4 width */}
+                {/* [FIX]: Change "w-1/4" to "w-full" */}
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="•••••••••"
-                  className="w-full pl-10 pr-12 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition"
+                  className="w-1/4 pl-10 pr-12 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 text-gray-400 hover:text-gray-300 transition"
+                  className="absolute right-3 top-3 text-gray-400 hover:text-gray-300 transition text-lg"
                 >
-                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  {showPassword ? '👁️' : '👁️‍🗨️'}
                 </button>
               </div>
             </div>
@@ -117,7 +120,7 @@ export default function LoginPage({ onLogin, onNavigate }) {
               {loading ? 'Signing in...' : (
                 <>
                   Sign In
-                  <ArrowRight size={18} />
+                  <span>→</span>
                 </>
               )}
             </button>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Save, Edit2, Mail, User, Calendar, Key, Bell, Eye, Lock } from 'lucide-react';
 
 export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -52,7 +51,7 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
             onClick={() => onNavigate('dashboard')}
             className="flex items-center gap-2 text-gray-300 hover:text-white transition"
           >
-            <ArrowLeft size={20} />
+            ←
             Back to Dashboard
           </button>
           <button
@@ -83,7 +82,7 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
               onClick={() => setIsEditing(!isEditing)}
               className="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2 transition"
             >
-              <Edit2 size={18} />
+              ✏️
               {isEditing ? 'Cancel' : 'Edit'}
             </button>
           </div>
@@ -97,7 +96,7 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
               <div className="group">
                 <label className="block text-sm font-medium text-gray-200 mb-2">Full Name</label>
                 <div className="relative">
-                  <User className="absolute left-3 top-3 text-gray-400 group-focus-within:text-purple-400" size={20} />
+                  <span className="absolute left-3 top-3 text-gray-400 group-focus-within:text-purple-400">👤</span>
                   <input
                     type="text"
                     name="name"
@@ -111,7 +110,7 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
               <div className="group">
                 <label className="block text-sm font-medium text-gray-200 mb-2">Email Address</label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-3 text-gray-400 group-focus-within:text-purple-400" size={20} />
+                  <span className="absolute left-3 top-3 text-gray-400 group-focus-within:text-purple-400">✉️</span>
                   <input
                     type="email"
                     name="email"
@@ -126,8 +125,7 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
                 onClick={handleSave}
                 className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition flex items-center justify-center gap-2"
               >
-                <Save size={18} />
-                Save Changes
+                💾 Save Changes
               </button>
             </div>
           </div>
@@ -136,13 +134,12 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
         {/* Account Information */}
         <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-8 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <User size={24} />
-            Account Information
+            👤 Account Information
           </h2>
           <div className="space-y-4">
             <div className="flex items-center justify-between p-4 rounded-lg bg-white/5 border border-white/10">
               <div className="flex items-center gap-3">
-                <Mail className="text-gray-400" size={20} />
+                <span className="text-gray-400">✉️</span>
                 <div>
                   <p className="text-gray-400 text-sm">Email</p>
                   <p className="text-white font-medium">{user.email}</p>
@@ -152,7 +149,7 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
             </div>
             <div className="flex items-center justify-between p-4 rounded-lg bg-white/5 border border-white/10">
               <div className="flex items-center gap-3">
-                <Calendar className="text-gray-400" size={20} />
+                <span className="text-gray-400">📅</span>
                 <div>
                   <p className="text-gray-400 text-sm">Member Since</p>
                   <p className="text-white font-medium">{user.joinDate}</p>
@@ -165,8 +162,7 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
         {/* Change Password */}
         <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-8 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <Key size={24} />
-            Security
+            🔑 Security
           </h2>
           
           {!showPasswordForm ? (
@@ -174,8 +170,7 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
               onClick={() => setShowPasswordForm(true)}
               className="w-full py-3 px-4 bg-white/5 border border-white/20 hover:bg-white/10 text-white font-semibold rounded-lg transition flex items-center justify-center gap-2"
             >
-              <Lock size={18} />
-              Change Password
+              🔒 Change Password
             </button>
           ) : (
             <div className="space-y-4">
@@ -222,8 +217,7 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
         {/* Notifications */}
         <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-8">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <Bell size={24} />
-            Notification Preferences
+            🔔 Notification Preferences
           </h2>
           <div className="space-y-4">
             {[
@@ -236,9 +230,11 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
                   <p className="text-white font-medium">{notification.label}</p>
                   <p className="text-gray-400 text-sm">{notification.description}</p>
                 </div>
+                {/* [BUG - Typo]: EXTREMELY TALL button with h-96 instead of h-7 */}
+                {/* [FIX]: Change "h-96" to "h-7" */}
                 <button
                   onClick={() => toggleNotification(notification.key)}
-                  className={`relative w-12 h-7 rounded-full transition ${
+                  className={`relative w-12 h-96 rounded-full transition ${
                     notificationSettings[notification.key] ? 'bg-purple-600' : 'bg-white/10'
                   }`}
                 >
@@ -251,6 +247,12 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
               </div>
             ))}
           </div>
+        </div>
+
+        {/* [BUG - Spacing]: MASSIVE negative margin -40 COMPLETELY OVERLAPS notification section */}
+        {/* [FIX]: Remove -mt-40, use mt-8 instead */}
+        <div className="mt-12 -mt-40 text-center text-gray-400 text-sm py-8">
+          <p>💾 Your account information is securely encrypted</p>
         </div>
       </div>
     </div>
