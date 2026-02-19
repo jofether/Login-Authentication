@@ -175,8 +175,6 @@ export default function RegisterPage({ onNavigate, onRegister }) {
             </div>
 
             {/* Confirm Password */}
-            {/* [BUG - Layout]: Flex direction REVERSED - label appears BELOW input field */}
-            {/* [FIX]: Remove flex-col-reverse, use flex-col instead */}
             <div className="group flex flex-col-reverse">
               <label className="block text-sm font-medium text-gray-200 mb-2">Confirm Password</label>
               <div className="relative">
@@ -204,8 +202,6 @@ export default function RegisterPage({ onNavigate, onRegister }) {
               </div>
             </div>
 
-            {/* Terms - [BUG - Spacing]: MASSIVE negative margin -32 causes MAJOR overlap with form */}
-            {/* [FIX]: Remove negative margin, use mt-4 or mt-6 */}
             <label className="flex items-start text-gray-300 hover:text-white cursor-pointer text-sm -mt-32">
               <input type="checkbox" className="w-4 h-4 rounded border-white/20 bg-white/10 accent-blue-500 mt-0.5" />
               <span className="ml-2">I agree to the terms and conditions</span>

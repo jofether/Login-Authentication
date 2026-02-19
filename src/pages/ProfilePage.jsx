@@ -230,8 +230,6 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
                   <p className="text-white font-medium">{notification.label}</p>
                   <p className="text-gray-400 text-sm">{notification.description}</p>
                 </div>
-                {/* [BUG - Typo]: EXTREMELY TALL button with h-96 instead of h-7 */}
-                {/* [FIX]: Change "h-96" to "h-7" */}
                 <button
                   onClick={() => toggleNotification(notification.key)}
                   className={`relative w-12 h-96 rounded-full transition ${
@@ -249,8 +247,6 @@ export default function ProfilePage({ user, onNavigate, onLogout, onUpdateUser }
           </div>
         </div>
 
-        {/* [BUG - Spacing]: MASSIVE negative margin -40 COMPLETELY OVERLAPS notification section */}
-        {/* [FIX]: Remove -mt-40, use mt-8 instead */}
         <div className="mt-12 -mt-40 text-center text-gray-400 text-sm py-8">
           <p>💾 Your account information is securely encrypted</p>
         </div>

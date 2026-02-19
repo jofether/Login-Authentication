@@ -45,8 +45,6 @@ export default function LoginPage({ onLogin, onNavigate }) {
         <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-white/20">
           {/* Logo/Header */}
           <div className="text-center mb-8">
-            {/* [BUG - Color & Contrast]: WHITE TEXT on white/light background = INVISIBLE */}
-            {/* [FIX]: Change "text-white" to "text-gray-900" or "text-purple-900" */}
             <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
               <span className="text-white text-2xl">🔐</span>
             </div>
@@ -81,8 +79,6 @@ export default function LoginPage({ onLogin, onNavigate }) {
               <label className="block text-sm font-medium text-gray-200 mb-2">Password</label>
               <div className="relative">
                 <span className="absolute left-3 top-3 text-gray-400 group-focus-within:text-purple-400">🔑</span>
-                {/* [BUG - Typo]: Invalid width class makes input container collapse to 1/4 width */}
-                {/* [FIX]: Change "w-1/4" to "w-full" */}
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}

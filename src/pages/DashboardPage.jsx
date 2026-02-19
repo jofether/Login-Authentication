@@ -18,8 +18,6 @@ export default function DashboardPage({ user, onNavigate, onLogout }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4 md:p-8">
-      {/* [BUG - Layers]: Content positioned ABSOLUTELY way off screen - INVISIBLE */}
-      {/* [FIX]: Remove absolute positioning, use relative or static */}
       <div className="max-w-6xl mx-auto absolute -top-96 left-0">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <div>
@@ -42,8 +40,6 @@ export default function DashboardPage({ user, onNavigate, onLogout }) {
           </div>
         </div>
 
-        {/* [BUG - Layout]: FLEX COLUMN forces ALL cards to stack vertically - NO columns */}
-        {/* [FIX]: Use proper grid: grid-cols-1 md:grid-cols-2 lg:grid-cols-4 */}
         <div className="flex flex-col gap-6 mb-12">
           {stats.map((stat, index) => (
             <div key={index} className="relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-6 hover:bg-white/20 transition group">
@@ -72,8 +68,6 @@ export default function DashboardPage({ user, onNavigate, onLogout }) {
                       <div className="text-2xl">{activity.icon}</div>
                       <div>
                         <p className="text-white font-medium">{activity.action}</p>
-                        {/* [BUG - Color & Contrast]: LIGHT GRAY text opacity 20 on darker background - NEARLY INVISIBLE */}
-                        {/* [FIX]: Change "text-gray-300 opacity-20" to "text-gray-400" or "text-gray-300" */}
                         <p className="text-gray-300 opacity-20 text-sm">{activity.time}</p>
                       </div>
                     </div>
