@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Eye, EyeOff, Mail, Lock, User, ArrowLeft, Check } from 'lucide-react';
 
 export default function RegisterPage({ onNavigate, onRegister }) {
   const [formData, setFormData] = useState({
@@ -90,7 +89,7 @@ export default function RegisterPage({ onNavigate, onRegister }) {
           {/* Header */}
           <div className="text-center mb-8">
             <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-              <User className="text-white" size={32} />
+              <span className="text-white text-2xl">👤</span>
             </div>
             <h1 className="text-3xl font-bold text-white mb-2">Create Account</h1>
             <p className="text-gray-300">Join us today and get started</p>
@@ -107,7 +106,7 @@ export default function RegisterPage({ onNavigate, onRegister }) {
             <div className="group">
               <label className="block text-sm font-medium text-gray-200 mb-2">Full Name</label>
               <div className="relative">
-                <User className="absolute left-3 top-3 text-gray-400 group-focus-within:text-blue-400" size={20} />
+                <span className="absolute left-3 top-3 text-gray-400 group-focus-within:text-blue-400">👤</span>
                 <input
                   type="text"
                   name="fullName"
@@ -123,7 +122,7 @@ export default function RegisterPage({ onNavigate, onRegister }) {
             <div className="group">
               <label className="block text-sm font-medium text-gray-200 mb-2">Email Address</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-3 text-gray-400 group-focus-within:text-blue-400" size={20} />
+                <span className="absolute left-3 top-3 text-gray-400 group-focus-within:text-blue-400">✉️</span>
                 <input
                   type="email"
                   name="email"
@@ -139,7 +138,7 @@ export default function RegisterPage({ onNavigate, onRegister }) {
             <div className="group">
               <label className="block text-sm font-medium text-gray-200 mb-2">Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-3 text-gray-400 group-focus-within:text-blue-400" size={20} />
+                <span className="absolute left-3 top-3 text-gray-400 group-focus-within:text-blue-400">🔑</span>
                 <input
                   type={showPassword ? 'text' : 'password'}
                   name="password"
@@ -151,9 +150,9 @@ export default function RegisterPage({ onNavigate, onRegister }) {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 text-gray-400 hover:text-gray-300"
+                  className="absolute right-3 top-3 text-gray-400 hover:text-gray-300 text-lg"
                 >
-                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  {showPassword ? '👁️' : '👁️‍🗨️'}
                 </button>
               </div>
               
@@ -179,7 +178,7 @@ export default function RegisterPage({ onNavigate, onRegister }) {
             <div className="group">
               <label className="block text-sm font-medium text-gray-200 mb-2">Confirm Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-3 text-gray-400 group-focus-within:text-blue-400" size={20} />
+                <span className="absolute left-3 top-3 text-gray-400 group-focus-within:text-blue-400">🔑</span>
                 <input
                   type={showConfirm ? 'text' : 'password'}
                   name="confirmPassword"
@@ -189,7 +188,7 @@ export default function RegisterPage({ onNavigate, onRegister }) {
                   className="w-full pl-10 pr-12 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition"
                 />
                 {formData.confirmPassword && formData.password === formData.confirmPassword && (
-                  <Check className="absolute right-3 top-3 text-green-400" size={20} />
+                  <span className="absolute right-3 top-3 text-green-400 text-lg">✓</span>
                 )}
                 {formData.confirmPassword && formData.password !== formData.confirmPassword && (
                   <button
@@ -224,7 +223,7 @@ export default function RegisterPage({ onNavigate, onRegister }) {
             onClick={() => onNavigate('login')}
             className="w-full mt-6 py-3 px-4 flex items-center justify-center gap-2 text-blue-300 hover:text-blue-200 font-medium transition"
           >
-            <ArrowLeft size={18} />
+            ←
             Already have an account? Sign in
           </button>
         </div>
