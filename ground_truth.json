@@ -2,6 +2,7 @@
   "repository": "Login Authentication",
   "bugs": [
     {
+      "comment": "Bug #1 - opacity",
       "bug_category": "Color",
       "bug_type": "opacity",
       "file_modified": "src/pages/LoginPage.jsx",
@@ -10,13 +11,14 @@
       "buggy_code": "<h1 className=\"text-3xl font-bold text-white opacity-10 mb-2\">Welcome Back</h1>",
       "css_selector": "h1.text-white",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 449,
+        "y": 161,
+        "width": 382,
+        "height": 36
       }
     },
     {
+      "comment": "Bug #2 - width",
       "bug_category": "Typo",
       "bug_type": "width",
       "file_modified": "src/pages/LoginPage.jsx",
@@ -25,13 +27,14 @@
       "buggy_code": "className=\"w-1/4 pl-10 pr-12 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition\"",
       "css_selector": "input.password-input",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 449,
+        "y": 386,
+        "width": 96,
+        "height": 50
       }
     },
     {
+      "comment": "Bug #3 - position, top",
       "bug_category": "Layers",
       "bug_type": "position, top",
       "file_modified": "src/pages/DashboardPage.jsx",
@@ -41,12 +44,13 @@
       "css_selector": ".max-w-6xl",
       "bounding_box": {
         "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "y": -494,
+        "width": 1152,
+        "height": 1847
       }
     },
     {
+      "comment": "Bug #4 - grid, flexbox",
       "bug_category": "Layout",
       "bug_type": "grid, flexbox",
       "file_modified": "src/pages/DashboardPage.jsx",
@@ -56,12 +60,13 @@
       "css_selector": ".stats-grid",
       "bounding_box": {
         "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "y": -374,
+        "width": 1152,
+        "height": 766
       }
     },
     {
+      "comment": "Bug #5 - opacity",
       "bug_category": "Color",
       "bug_type": "opacity",
       "file_modified": "src/pages/DashboardPage.jsx",
@@ -70,13 +75,14 @@
       "buggy_code": "<p className=\"text-gray-300 opacity-20 text-sm\">{activity.time}</p>",
       "css_selector": "p.activity-time",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
-      }
+            "x": 84,
+            "y": 850,
+            "width": 259,
+            "height": 20
+          }
     },
     {
+      "comment": "Bug #6 - height",
       "bug_category": "Typo",
       "bug_type": "height",
       "file_modified": "src/pages/ProfilePage.jsx",
@@ -85,13 +91,14 @@
       "buggy_code": "className={`relative w-12 h-96 rounded-full transition ${",
       "css_selector": "button.notification-toggle",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 878,
+        "y": 194,
+        "width": 48,
+        "height": 384
       }
     },
     {
+      "comment": "Bug #7 - margin-top",
       "bug_category": "Spacing",
       "bug_type": "margin-top",
       "file_modified": "src/pages/ProfilePage.jsx",
@@ -100,13 +107,14 @@
       "buggy_code": "<div className=\"mt-12 -mt-40 text-center text-gray-400 text-sm py-8\">",
       "css_selector": "div.security-message",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 304,
+        "y": 1543,
+        "width": 672,
+        "height": 84
       }
     },
     {
+      "comment": "Bug #8 - flex-direction",
       "bug_category": "Layout",
       "bug_type": "flex-direction",
       "file_modified": "src/pages/RegisterPage.jsx",
@@ -115,13 +123,14 @@
       "buggy_code": "<div className=\"group flex flex-col-reverse\">",
       "css_selector": "div.confirm-password-group",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 449,
+        "y": 491,
+        "width": 382,
+        "height": 78
       }
     },
     {
+      "comment": "Bug #9 - margin-top",
       "bug_category": "Spacing",
       "bug_type": "margin-top",
       "file_modified": "src/pages/RegisterPage.jsx",
@@ -130,13 +139,14 @@
       "buggy_code": "<label className=\"flex items-start text-gray-300 hover:text-white cursor-pointer text-sm -mt-32\">",
       "css_selector": "label.terms-checkbox",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 449,
+        "y": 589,
+        "width": 382,
+        "height": 20
       }
     },
     {
+      "comment": "Bug #10 - transform, visibility",
       "bug_category": "Layers",
       "bug_type": "transform, visibility",
       "file_modified": "src/index.css",
