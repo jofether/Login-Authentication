@@ -110,8 +110,8 @@
       "bug_type": "margin-top",
       "file_modified": "src/pages/ProfilePage.jsx",
       "line_number": 249,
-      "neg_code": "<div className=\"mt-12 text-center text-gray-400 text-sm py-8\">",
-      "pos_code": "<div className=\"mt-12 -mt-40 text-center text-gray-400 text-sm py-8\">",
+      "neg_code": "<div className=\\\"mt-12 text-center text-gray-400 text-sm py-8\\\">",
+      "pos_code": "<div className=\\\"mt-12 -mt-40 text-center text-gray-400 text-sm py-8\\\">",
       "css_selector": ".text-center.text-gray-400",
       "bounding_box": {
         "x": 304,
@@ -162,7 +162,7 @@
       "file_modified": "src/index.css",
       "line_number": 145,
       "neg_code": "",
-      "pos_code": ".broken-transform {\n  transform: scale(0) translateX(-9999px);\n  visibility: hidden;\n}",
+      "pos_code": ".broken-transform { transform: scale(0) translateX(-9999px); visibility: hidden; }",
       "css_selector": "form",
       "bounding_box": {
         "x": 449,
