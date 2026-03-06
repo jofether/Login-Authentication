@@ -44,7 +44,7 @@
       "line_number": 21,
       "neg_code": "<div className=\"max-w-6xl mx-auto\">",
       "pos_code": "<div className=\"max-w-6xl mx-auto absolute -top-96 left-0\">",
-      "css_selector": "div.max-w-6xl.mx-auto",
+      "css_selector": "div.max-w-6xl",
       "bounding_box": {
         "x": 0,
         "y": 0,
@@ -61,7 +61,7 @@
       "line_number": 43,
       "neg_code": "<div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12\">",
       "pos_code": "<div className=\"flex flex-col gap-6 mb-12\">",
-      "css_selector": ".gap-6.mb-12",
+      "css_selector": "div.gap-6",
       "bounding_box": {
         "x": 0,
         "y": 0,
@@ -78,7 +78,7 @@
       "line_number": 71,
       "neg_code": "<p className=\"text-gray-400 text-sm\">{activity.time}</p>",
       "pos_code": "<p className=\"text-gray-300 opacity-20 text-sm\">{activity.time}</p>",
-      "css_selector": "p:has-text(/ago|Yesterday/)",
+      "css_selector": "p.text-sm",
       "bounding_box": {
         "x": 84,
         "y": 850,
@@ -95,7 +95,7 @@
       "line_number": 235,
       "neg_code": "className={`relative w-12 h-7 rounded-full transition ${",
       "pos_code": "className={`relative w-12 h-96 rounded-full transition ${",
-      "css_selector": "button.w-12.rounded-full",
+      "css_selector": "button.rounded-full",
       "bounding_box": {
         "x": 878,
         "y": 194,
@@ -129,7 +129,7 @@
       "line_number": 178,
       "neg_code": "<div className=\"group\">",
       "pos_code": "<div className=\"group flex flex-col-reverse\">",
-      "css_selector": "input[name=\"confirmPassword\"]",
+      "css_selector": "div.group",
       "bounding_box": {
         "x": 449,
         "y": 491,
@@ -146,7 +146,7 @@
       "line_number": 205,
       "neg_code": "<label className=\"flex items-start text-gray-300 hover:text-white cursor-pointer text-sm\">",
       "pos_code": "<label className=\"flex items-start text-gray-300 hover:text-white cursor-pointer text-sm -mt-32\">",
-      "css_selector": "label:has(span:has-text(\"I agree\"))",
+      "css_selector": "label.flex.items-start",
       "bounding_box": {
         "x": 449,
         "y": 500,
@@ -163,7 +163,7 @@
       "line_number": 145,
       "neg_code": "",
       "pos_code": ".broken-transform {\n  transform: scale(0) translateX(-9999px);\n  visibility: hidden;\n}",
-      "css_selector": "form:has(button:has-text(\"Sign Up\"))",
+      "css_selector": "form",
       "bounding_box": {
         "x": 449,
         "y": 300,
